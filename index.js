@@ -131,7 +131,7 @@ function createIntern() {
       message: 'Please enter interns school'
     }
   ]).then((answers) => {
-    const intern = new Intern (answers.engineerName, answers.id, answers.email, answers.school)
+    const intern = new Intern (answers.internName, answers.id, answers.email, answers.school)
 
     teamMembers.push(intern);
     createTeam();
