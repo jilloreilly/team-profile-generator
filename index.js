@@ -46,7 +46,7 @@ function createManager() {
       message: 'Please enter office number'
     }
   ]).then((answers) => {
-    const manager = new Manager (answers.managerName, answers.id, answers.email. answers.officeNumber)
+    const manager = new Manager (answers.managerName, answers.id, answers.email, answers.officeNumber)
 
     teamMembers.push(manager);
     createTeam();
@@ -89,7 +89,7 @@ function createEngineer() {
       message: 'Please enter engineers office number'
     }
   ]).then((answers) => {
-    const engineer = new Engineer (answers.engineerName, answers.id, answers.email. answers.officeNumber)
+    const engineer = new Engineer (answers.engineerName, answers.id, answers.email, answers.officeNumber)
 
     teamMembers.push(engineer);
     createTeam();
@@ -131,7 +131,7 @@ function createIntern() {
       message: 'Please enter interns school'
     }
   ]).then((answers) => {
-    const intern = new Intern (answers.engineerName, answers.id, answers.email. answers.school)
+    const intern = new Intern (answers.engineerName, answers.id, answers.email, answers.school)
 
     teamMembers.push(intern);
     createTeam();
