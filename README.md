@@ -15,7 +15,7 @@ A Node.js command-line application that takes in information about employees on 
 
 ## Description
 
-This Team Profile Generator showcases the JavaScript(Object-oriented programming), Test--driven development (Jest), Node.js and npm skills I have gained from Module 12 (Test-Driven Development) of the Front-end Web Development Bootcamp. 
+This Team Profile Generator showcases the JavaScript(Object-oriented programming), Test-driven development (Jest), Node.js and npm skills I have gained from Module 12 (Test-Driven Development) of the Front-end Web Development Bootcamp. 
 
 
 ## Usage & Installation
@@ -33,8 +33,8 @@ This Team Profile Generator showcases the JavaScript(Object-oriented programming
 ![Team Profile Generator questions in terminal](assets/images/1-screenshot-team-profile-generator-questions.png)
 
 ***
-##### Screenshot of generated  README.md file:
-![Screenshot of generated README.md](assets/images/2-screenshot-generated-readme.jpg)
+##### Screenshot of generated team.html file:
+![Screenshot of generated team.html](assets/images/2-screenshot-generated-test-html.png)
 
 ***
 
@@ -52,8 +52,6 @@ All tests should pass sucessfully.
 ## Credits
 
 Thank you to the following:
-
-- [Markdown Guide - Basic syntax](https://www.markdownguide.org/basic-syntax/)
 
 - npm: [Inquirer - prompt types](https://www.npmjs.com/package//inquirer#prompt-types)
 
