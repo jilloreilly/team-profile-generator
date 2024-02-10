@@ -67,17 +67,17 @@ function createEngineer() {
     {
       type: 'input',
       name: 'id',
-      message: 'Please enter engineers employee ID'
+      message: 'Please enter engineer\'s employee ID'
     },
     {
       type: 'input',
       name: 'email',
-      message: 'Please enter engineers email address'
+      message: 'Please enter engineer\'s email address'
     },
     {
       type: 'input',
       name: 'officeNumber',
-      message: 'Please enter engineers office number'
+      message: 'Please enter engineer\'s office number'
     }
   ]).then((answers) => {
     // Store the engineer answers into a new Engineer object
@@ -104,17 +104,17 @@ function createIntern() {
     {
       type: 'input',
       name: 'id',
-      message: 'Please enter intern employee ID'
+      message: 'Please enter intern\'s employee ID'
     },
     {
       type: 'input',
       name: 'email',
-      message: 'Please enter intern email address'
+      message: 'Please enter intern\'s email address'
     },
     {
       type: 'input',
       name: 'school',
-      message: 'Please enter interns school'
+      message: 'Please enter interns\'s school'
     }
   ]).then((answers) => {
     // Store the intern answers into a new Intern object
