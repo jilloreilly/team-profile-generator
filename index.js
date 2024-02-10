@@ -143,7 +143,8 @@ function createTeam() {
     } else if(answers.employeeChoice === 'Intern') {
       createIntern();
     } else {
-      fs.writeFileSync('./output/team.html', render(teamMembers), 'utf-8')
+      fs.writeFileSync('./output/team.html', render(teamMembers), 'utf-8');
+      console.log('Successfully created TEAM to ./output/team.html');
     } 
   })
 }
