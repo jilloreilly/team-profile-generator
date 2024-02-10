@@ -15,20 +15,18 @@ const render = require("./src/page-template.js");
 
 // Create a empty array to store the team members after they are created
 const teamMembers = []
-// Create a empty array to store the member IDs after they are created
 
-// Function to create the manager. Should be the initial function called when creating the team.
 
+// Function to create the manager. It is the initial function called when creating the team.
 function createManager() {
   console.log(`Please build your team`);
   
   // array of questions for user
-
   inquirer.prompt([
     {
       type: 'input',
       name: 'managerName',
-      message: 'What is the team managers name?'
+      message: 'What is the team manager\'s name?'
     },
     {
       type: 'input',
@@ -46,32 +44,25 @@ function createManager() {
       message: 'Please enter office number'
     }
   ]).then((answers) => {
+    // Store answers into a new Manager object
     const manager = new Manager (answers.managerName, answers.id, answers.email, answers.officeNumber)
 
+    // Push manager into team members array
     teamMembers.push(manager);
     createTeam();
   })
 }
-    // Ask for a name, id, email and office number for the manager
-
-    // Then store the answers into a new Manager object
-
-    //push the manager into the team members array
-
-
-
-// Function to create an engineer.
-
+    
+// Function to create an engineer
 function createEngineer() {
-  //console.log(`Please build your engineer`);
+  console.log(`Please build your engineer`);
   
   // array of questions for user
-
   inquirer.prompt([
     {
       type: 'input',
       name: 'engineerName',
-      message: 'What is the engineers name?'
+      message: 'What is the engineer\'s name?'
     },
     {
       type: 'input',
@@ -81,7 +72,7 @@ function createEngineer() {
     {
       type: 'input',
       name: 'email',
-      message: 'Please enter enginners email address'
+      message: 'Please enter engineers email address'
     },
     {
       type: 'input',
@@ -89,31 +80,26 @@ function createEngineer() {
       message: 'Please enter engineers office number'
     }
   ]).then((answers) => {
+    // Store the engineer answers into a new Engineer object
     const engineer = new Engineer (answers.engineerName, answers.id, answers.email, answers.officeNumber)
 
+    // Push engineer into team members array
     teamMembers.push(engineer);
     createTeam();
   })
 }
-    // Asks for a name, id, email, and github
-
-    //then store the answers into a new Engineer object
-
-    //push the engineer into the team members array
-
+    
 
 // Function to create an intern
-
 function createIntern() {
-  //console.log(`Please build your engineer`);
+  console.log(`Please build your intern`);
   
   // array of questions for user
-
   inquirer.prompt([
     {
       type: 'input',
       name: 'internName',
-      message: 'What is the intern name?'
+      message: 'What is the intern\'s name?'
     },
     {
       type: 'input',
@@ -131,24 +117,16 @@ function createIntern() {
       message: 'Please enter interns school'
     }
   ]).then((answers) => {
+    // Store the intern answers into a new Intern object
     const intern = new Intern (answers.internName, answers.id, answers.email, answers.school)
 
+    // Push intern object into team member array  
     teamMembers.push(intern);
     createTeam();
   })
 }
-    // Asks for a name, id, email, and school
 
-    // Then store the answers into the team members arry
-
-    // push the intern into the team members array
-
-
-// Function to ask the user what team member they would like to create next, either a Engineer or Intern. Also ask if they don't want to add any more team members. SHOULD BE CALLED AT THE END OF EACH MEMBER FUNCTION SO THEY CAN CREATE ANOTHER MEMBER AFTER ALREADY CREATING ONE.
-
-    // Then create a conditional to check which member the user picked and run the appropriate function based off of that input ex:`if(userChoice === 'Engineer'){createEngineer()}`
-    // Have a else condition so that if they choose to not make any more members, the file gets written.(Can create a function for this and then call the function)
-
+// Function to create additional team members (engineer or intern) after manager has been created.  If no more employees are needed it will generate the HTML page with all information filled in.
 function createTeam() {
   
   inquirer.prompt([
@@ -159,6 +137,7 @@ function createTeam() {
       choices: ['Engineer', 'Intern', "I'm done adding employees"]
     }
   ]).then((answers) => {
+    // Checks which employee type has been selected and run appropriate function, otherwise create HTML file of team
     if (answers.employeeChoice === 'Engineer') {
       createEngineer()
     } else if(answers.employeeChoice === 'Intern') {
@@ -169,7 +148,5 @@ function createTeam() {
   })
 }
 
-// Function to hold all of the other functions.
-    // Call the function to initialize the app.
-
+//  Initialize the application by calling createManager() function
 createManager();
