@@ -5,10 +5,11 @@ const inquirer = require("inquirer");
 const path = require("path");
 const fs = require("fs");
 
-//const OUTPUT_DIR = path.resolve(__dirname, "output");
-//const outputPath = path.join(OUTPUT_DIR, "team.html");
+const OUTPUT_DIR = path.resolve(__dirname, "output");
+const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
+const {isEmptyInput, validateId, validateEmail, validateOfficeNum} = require('./src/validation.js')
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
@@ -26,22 +27,26 @@ function createManager() {
     {
       type: 'input',
       name: 'managerName',
-      message: 'What is the team manager\'s name?'
+      message: 'What is the team manager\'s name?',
+      validate: isEmptyInput
     },
     {
       type: 'input',
       name: 'id',
-      message: 'Please enter an employee ID'
+      message: 'Please enter an employee ID',
+      validate:  validateId
     },
     {
       type: 'input',
       name: 'email',
-      message: 'Please enter email address'
+      message: 'Please enter email address',
+      validate: validateEmail
     },
     {
       type: 'input',
       name: 'officeNumber',
-      message: 'Please enter office number'
+      message: 'Please enter office number',
+      validate: validateOfficeNum
     }
   ]).then((answers) => {
     // Store answers into a new Manager object
@@ -62,26 +67,30 @@ function createEngineer() {
     {
       type: 'input',
       name: 'engineerName',
-      message: 'What is the engineer\'s name?'
+      message: 'What is the engineer\'s name?',
+      validate: isEmptyInput
     },
     {
       type: 'input',
       name: 'id',
-      message: 'Please enter engineer\'s employee ID'
+      message: 'Please enter engineer\'s employee ID',
+      validate:  validateId
     },
     {
       type: 'input',
       name: 'email',
-      message: 'Please enter engineer\'s email address'
+      message: 'Please enter engineer\'s email address',
+      validate: validateEmail
     },
     {
       type: 'input',
-      name: 'officeNumber',
-      message: 'Please enter engineer\'s office number'
+      name: 'github',
+      message: 'Please enter engineer\'s GitHub username',
+      validate: isEmptyInput
     }
   ]).then((answers) => {
     // Store the engineer answers into a new Engineer object
-    const engineer = new Engineer (answers.engineerName, answers.id, answers.email, answers.officeNumber)
+    const engineer = new Engineer (answers.engineerName, answers.id, answers.email, answers.github)
 
     // Push engineer into team members array
     teamMembers.push(engineer);
@@ -99,22 +108,26 @@ function createIntern() {
     {
       type: 'input',
       name: 'internName',
-      message: 'What is the intern\'s name?'
+      message: 'What is the intern\'s name?',
+      validate: isEmptyInput
     },
     {
       type: 'input',
       name: 'id',
-      message: 'Please enter intern\'s employee ID'
+      message: 'Please enter intern\'s employee ID',
+      validate: validateId
     },
     {
       type: 'input',
       name: 'email',
-      message: 'Please enter intern\'s email address'
+      message: 'Please enter intern\'s email address',
+      validate: validateEmail
     },
     {
       type: 'input',
       name: 'school',
-      message: 'Please enter interns\'s school'
+      message: 'Please enter interns\'s school',
+      validate: isEmptyInput
     }
   ]).then((answers) => {
     // Store the intern answers into a new Intern object
@@ -143,7 +156,7 @@ function createTeam() {
     } else if(answers.employeeChoice === 'Intern') {
       createIntern();
     } else {
-      fs.writeFileSync('./output/team.html', render(teamMembers), 'utf-8');
+      fs.writeFileSync(outputPath, render(teamMembers), 'utf-8');
       console.log('Successfully created TEAM to ./output/team.html');
     } 
   })
