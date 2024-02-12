@@ -32,6 +32,10 @@ This Team Profile Generator showcases the JavaScript(Object-oriented programming
 
 ![Team Profile Generator questions in terminal](assets/images/1-screenshot-team-profile-generator-questions.png)
 
+**Note:** Basic validation has been included in Inquirer to ensure that users provide valid inputs for each question, such as a non-empty email address or a numerical employee ID.
+
+![Team Profile Generator questions with validation](assets/images/4-screenshot-team-profile-generator-validation.png)
+
 ***
 ##### Screenshot of generated team.html file:
 ![Screenshot of generated team.html](assets/images/2-screenshot-generated-team-html.png)
