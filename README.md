@@ -34,7 +34,7 @@ This Team Profile Generator showcases the JavaScript(Object-oriented programming
 
 ***
 ##### Screenshot of generated team.html file:
-![Screenshot of generated team.html](assets/images/2-screenshot-generated-test-html.png)
+![Screenshot of generated team.html](assets/images/2-screenshot-generated-team-html.png)
 
 ***
 
@@ -56,6 +56,8 @@ Thank you to the following:
 - npm: [Inquirer - prompt types](https://www.npmjs.com/package//inquirer#prompt-types)
 
 - [Jest](https://jestjs.io/)
+
+- mdn: [Regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_expressions)
 
 - RegExr: [regular expression for email](https://regexr.com/3e48o)
 
