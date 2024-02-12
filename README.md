@@ -57,7 +57,11 @@ Thank you to the following:
 
 - [Jest](https://jestjs.io/)
 
+- RegExr: [regular expression for email](https://regexr.com/3e48o)
+
 - Pod 2 TA **Christopher Kratz** for guiding us on the JavaScript, Node.js and npm for the challenge
+
+- Tutor Bobbi Tarkany - on how to add validation to Inquirer
 
 
 ## License
