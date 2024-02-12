@@ -1,0 +1,23 @@
+body {
+  background-color: #8fc0c3;
+  color: #2b4876;
+  font-family: "Poppins", sans-serif;
+}
+
+.team-heading {
+  background: #eef3fb;
+}
+
+.card {
+  border: none;
+}
+
+.card-header {
+  background: #eef3fb;
+  border-radius: 0.8rem!important;
+  border-bottom: none;
+}
+
+.rounded-lg {
+  border-radius: 0.8rem!important;
+}
